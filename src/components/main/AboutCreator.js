@@ -26,6 +26,17 @@ const AboutCreator = () => {
       }}
     >
       <h1 style={{ marginBottom: "20px" }}>??? : 기분이 쩔어</h1>
+      <p className="mb-0">
+        깃허브 링크:{" "}
+        <a
+          href="https://github.com/Dev-Yesung"
+          target="_blank"
+          rel="noreferrer"
+          className="text-decoration-none"
+        >
+          GitHub Link
+        </a>
+      </p>
       <YouTube videoId={videoId} opts={opts} style={{ marginBottom: "20px" }} />
     </div>
   );
