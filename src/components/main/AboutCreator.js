@@ -1,7 +1,32 @@
+import React from "react";
+import YouTube from "react-youtube";
+
 const AboutCreator = () => {
+  // YouTube 동영상 ID
+  const videoId = "qkY7p6X775I";
+
+  // YouTube 옵션
+  const opts = {
+    height: "360",
+    width: "640",
+    playerVars: {
+      // 자동 재생 여부
+      autoplay: 1,
+    },
+  };
+
   return (
-    <div>
-      <h1>보새를 입어도 나는 정말 새삥</h1>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+      }}
+    >
+      <h1 style={{ marginBottom: "20px" }}>??? : 기분이 쩔어</h1>
+      <YouTube videoId={videoId} opts={opts} style={{ marginBottom: "20px" }} />
     </div>
   );
 };

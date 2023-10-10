@@ -7,6 +7,8 @@ import NavigationBar from "./components/head/NavigationBar";
 import Title from "./components/head/Title";
 import UrlForm from "./components/main/UrlForm";
 
+import "bootstrap/dist/css/bootstrap.min.css"; // 부트스트랩 CSS 추가
+
 Modal.setAppElement("#root");
 
 const App = () => {
@@ -24,29 +26,33 @@ const App = () => {
   };
 
   return (
-    <div>
-      <header>
+    <div className="app-container">
+      <header className="app-section">
         <Title />
         <NavigationBar openModal={openModal} />
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          contentLabel="Modal"
-        >
-          {modalContent}
-          <button onClick={closeModal}>닫기</button>
-        </Modal>
       </header>
-      <main>
+      <main className="app-section my-4 text-center">
+        {" "}
+        {/* 폼을 가운데 정렬하고 크기를 조정 */}
         <BrowserRouter>
           <Routes>
             <Route path="/" exact element={<UrlForm />} />
           </Routes>
         </BrowserRouter>
       </main>
-      <footer>
+      <footer className="app-section mt-auto">
+        {" "}
+        {/* 풋터를 화면 아래에 붙임 */}
         <Footer />
       </footer>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Modal"
+      >
+        {modalContent}
+        <button onClick={closeModal}>닫기</button>
+      </Modal>
     </div>
   );
 };
