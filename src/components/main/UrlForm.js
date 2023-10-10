@@ -29,7 +29,7 @@ const UrlForm = () => {
       const requestBody = qs.stringify(formData);
 
       const response = await axios.post(
-        `http://localhost:8081/v1/util/short-url/${selectedOption}`,
+        `http://ec2-3-35-240-254.ap-northeast-2.compute.amazonaws.com:8081/v1/util/short-url/${selectedOption}`,
         requestBody,
         {
           headers: {
@@ -38,7 +38,9 @@ const UrlForm = () => {
         }
       );
 
-      setShortenedUrl(`http://localhost:8081/${response.data.shortUrl}`);
+      setShortenedUrl(
+        `http://ec2-3-35-240-254.ap-northeast-2.compute.amazonaws.com:8081/${response.data.shortUrl}`
+      );
     } catch (error) {
       console.error("단축 URL을 만드는 데 실패했습니다.", error);
     }

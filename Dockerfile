@@ -8,6 +8,7 @@ COPY ./nginx.conf /etc/nginx/conf.d
 EXPOSE 3000
 CMD ["nginx", "-g", "daemon off;"]
 
+# docker network create url-shortener-network
 # 네트워크 : url-shortener-network
 
 # 리액트 : url-shortener-react(3000:3000)
@@ -20,4 +21,4 @@ CMD ["nginx", "-g", "daemon off;"]
 # docker run -d -p 3306:3306 --name url-shortener-mysql -e MYSQL_ROOT_PASSWORD=12345 --network url-shortener-network mysql:latest
 
 # redis : url-shortener-redis (포트: 6379:6379)
-# docker run -d -p 6379:6379 --name url-shortener-redis --network url-shortener-network redis:latest
+# docker run -d -p 6379:6379 --name url-shortener-redis --network url-shortener-network 7c4b517da47d
